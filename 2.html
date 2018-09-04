@@ -1,0 +1,34 @@
+<!--
+Limit maximum character input in the textarea. Show the no. of characters remaining using jquery
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <form method="post">
+        <textarea maxlength="200"></textarea>
+        <div>
+            Limit: 200
+            <p></p>
+        </div>
+    </form>
+</body>
+
+<script>
+    $(function () {
+        $('textarea').keyup(function () {
+            var charno = 200-$(this).val().length;
+            $('p').html("Characters remaining: " + charno);
+        });
+    });
+</script>
+
+</html>
